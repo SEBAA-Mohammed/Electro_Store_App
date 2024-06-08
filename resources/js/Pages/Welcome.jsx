@@ -5,7 +5,11 @@ import Banner from "@/Components/Banner";
 import Blogs from "@/Components/Blogs";
 import Partners from "@/Components/Partners";
 import Footer from "@/Components/Footer";
+
 import { Link, Head } from "@inertiajs/react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 export default function Welcome({ categories, bestproducts }) {
     const BannerData = {
@@ -29,6 +33,16 @@ export default function Welcome({ categories, bestproducts }) {
         title4: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque reiciendis",
         bgColor: "#2dcc6f",
     };
+
+    useEffect(() => {
+        AOS.init({
+            duration: 800,
+            easing: "ease-in-sine",
+            delay: 100,
+            offset: 100,
+        });
+        AOS.refresh();
+    }, []);
 
     return (
         <>

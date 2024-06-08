@@ -64,7 +64,13 @@ class ProductController extends Controller
         //
     }
 
-    public function getProductByCategory($category)
+    public function getProductByCategory($id)
     {
+
+        $products = Product::where('category_id', $id)->get();
+
+        return Inertia::render('Products', [
+            "products" => $products
+        ]);
     }
 }
