@@ -13,7 +13,7 @@ export default function Navbar({ categories }) {
                     {/* Logo and Links section */}
                     <div className="flex  items-center gap-4">
                         <a
-                            href="#"
+                            href="/"
                             className="text-primary font-semibold tracking-widest text-2xl uppercase sm:text-3xl"
                         >
                             Electro-Store
