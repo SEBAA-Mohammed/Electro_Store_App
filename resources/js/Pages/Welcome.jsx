@@ -2,6 +2,7 @@ import Navbar from "@/Components/Navbar";
 import Slide from "@/Components/Slide";
 import Services from "@/Components/Services";
 import Banner from "@/Components/Banner";
+import Blogs from "@/Components/Blogs";
 import { Link, Head } from "@inertiajs/react";
 
 export default function Welcome({ categories, bestproducts }) {
@@ -16,13 +17,26 @@ export default function Welcome({ categories, bestproducts }) {
         bgColor: "#f42c37",
     };
 
+    const BannerData2 = {
+        discount: "30% OFF",
+        title: "Happy Hours",
+        date: "14 Jan to 28 Jan",
+        image: "http://127.0.0.1:8000/storage/products/smartwatch2.png",
+        title2: "Smart Solo",
+        title3: "Winter Sale",
+        title4: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque reiciendis",
+        bgColor: "#2dcc6f",
+    };
+
     return (
         <>
             <Head title="Home" />
             <Navbar categories={categories} />
             <Slide bestproducts={bestproducts} />
-            <Services />
             <Banner data={BannerData} />
+            <Services />
+            <Banner data={BannerData2} />
+            <Blogs />
         </>
     );
 }
