@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $bestproducts = Product::orderBy("price_bt")->get();
+        $bestproducts = Product::with('images')->orderBy("price_bt")->get();
 
         return Inertia::render('Welcome', [
             "categories" => $categories,

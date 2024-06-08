@@ -1,5 +1,6 @@
 import Navbar from "@/Components/Navbar";
 import Slide from "@/Components/Slide";
+import Services from "@/Components/Services";
 import { Link, Head } from "@inertiajs/react";
 
 export default function Welcome({ categories, bestproducts }) {
@@ -20,6 +21,7 @@ export default function Welcome({ categories, bestproducts }) {
             <Head title="Home" />
             <Navbar categories={categories} />
             <Slide bestproducts={bestproducts} />
+            <Services />
         </>
     );
 }

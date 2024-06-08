@@ -2,12 +2,14 @@ import Slider from "react-slick";
 import Button from "./Button";
 
 export default function Slide({ bestproducts }) {
+    const baseUrl = "http://127.0.0.1:8000/storage/";
+
     const settings = {
         dots: false,
         arrows: false,
         infinite: true,
         speed: 800,
-        // autoplay : true,
+        autoplay: true,
         autoplaySpeed: 4000,
         cssEase: "ease-in-out",
         pauseOnHover: false,
@@ -15,7 +17,7 @@ export default function Slide({ bestproducts }) {
     };
     console.log(bestproducts);
     return (
-        <div className="container">
+        <div className="container mt-4">
             <div className="overflow-hidden rounded-3xl min-h-[550px] sm:min-h-[650px] hero-bg-color flex justify-center items-center ">
                 <div className=" container pb-8 sm:pb-0">
                     {/* hero section */}
@@ -31,6 +33,9 @@ export default function Slide({ bestproducts }) {
                                         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold">
                                             {product.label}
                                         </h1>
+                                        <h1 className="text-5xl Uppercase text-white dark:text:white/5 sm:text-[80px] md:text-[100px] xl:text-[150px] font-bold">
+                                            {product.label}
+                                        </h1>
                                         <div>
                                             <Button
                                                 text="Shop Now"
@@ -42,11 +47,16 @@ export default function Slide({ bestproducts }) {
                                     {/* image section */}
                                     <div>
                                         <div className="order-1 sm:order-2">
-                                            <img
-                                                src={product.images[0]}
-                                                alt=""
-                                                className="w-[300px] sm:w-[450px] h-[300px]  sm:h-[450px]  sm:scale-105 lg:scale-110 object-contain mx-auto drop-shawdow-[-8px_4px_6px_rgba(0,0,0,.4)] relative z-40"
-                                            />
+                                            {product.images &&
+                                            product.images.length > 0 ? (
+                                                <img
+                                                    src={`${baseUrl}${product.images[0].image_url}`}
+                                                    alt={product.label}
+                                                    className="w-[300px] sm:w-[450px] h-[300px] sm:h-[450px] sm:scale-105 lg:scale-110 object-contain mx-auto drop-shadow-[-8px_4px_6px_rgba(0,0,0)] relative z-40"
+                                                />
+                                            ) : (
+                                                <p>No image available</p>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
