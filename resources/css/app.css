@@ -13,4 +13,9 @@
     }
 }
 
+@layer components {
+    .dark {
+        @apply bg-gray-900;
+    }
+}
 

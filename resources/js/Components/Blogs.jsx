@@ -54,10 +54,10 @@ const Blogs = () => {
                             </div>
                             {/* content section */}
                             <div className="space-y-2">
-                                <p className="text-xs text-gray-500">
+                                <p className="text-xs text-gray-500  dark:text-gray-500">
                                     {data.published}
                                 </p>
-                                <p className="font-bold line-clamp-1">
+                                <p className="font-bold line-clamp-1 dark:text-white">
                                     {data.title}
                                 </p>
                                 <p className="line-clamp-2 text-sm text-gray-600 dark:text-gray-400">
