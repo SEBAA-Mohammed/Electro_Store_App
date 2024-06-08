@@ -3,6 +3,7 @@ import Slide from "@/Components/Slide";
 import Services from "@/Components/Services";
 import Banner from "@/Components/Banner";
 import Blogs from "@/Components/Blogs";
+import Partners from "@/Components/Partners";
 import { Link, Head } from "@inertiajs/react";
 
 export default function Welcome({ categories, bestproducts }) {
@@ -37,6 +38,7 @@ export default function Welcome({ categories, bestproducts }) {
             <Services />
             <Banner data={BannerData2} />
             <Blogs />
+            <Partners />
         </>
     );
 }
