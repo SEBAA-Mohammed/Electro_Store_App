@@ -1,7 +1,7 @@
 import Navbar from "@/Components/Navbar";
 import { Link, Head } from "@inertiajs/react";
 
-export default function Welcome() {
+export default function Welcome({ categories }) {
     // { auth, laravelVersion, phpVersion }
     // const handleImageError = () => {
     //     document
@@ -17,8 +17,7 @@ export default function Welcome() {
     return (
         <>
             <Head title="Home" />
-
-            <Navbar />
+            <Navbar categories={categories} />
         </>
     );
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +17,9 @@ use Inertia\Inertia;
 // });
 
 Route::get("/", [HomeController::class, 'index']);
+
+Route::resource('product', ProductController::class);
+Route::get('/products/{category_id}', [ProductController::class, 'getProductByCategory'])->name('productsByCategory');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
