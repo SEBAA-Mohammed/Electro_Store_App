@@ -12,7 +12,7 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
-        "date",
+        "order_date",
         "is_paid",
         "adresse",
         "user_id",
