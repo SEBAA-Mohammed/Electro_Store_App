@@ -19,3 +19,17 @@
     }
 }
 
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgb(3, 36, 54);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #f42c37;
+    border-radius: 20px;
+    border: 3px solid rgb(3, 36, 54);
+}
+
