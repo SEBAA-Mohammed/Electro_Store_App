@@ -31,7 +31,7 @@ class ProductResource extends Resource
                 Forms\Components\Section::make()
                     ->schema([
                         Forms\Components\Select::make('category_id')
-                            ->relationship('category', 'id')
+                            ->relationship('category', 'label')
                             ->required(),
                         Forms\Components\TextInput::make('label')
                             ->required()
@@ -65,8 +65,10 @@ class ProductResource extends Resource
         return Repeater::make('images')
             ->relationship()
             ->schema([
-                Forms\Components\FileUpload::make('url')
+                Forms\Components\FileUpload::make('image_url')
                     ->image()
+                    ->disk('public')
+                    ->directory('products')
                     ->required(),
             ]);
     }
