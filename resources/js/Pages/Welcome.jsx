@@ -11,7 +11,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 
-export default function Welcome({ categories, bestproducts }) {
+export default function Welcome({ categories, bestproducts, auth }) {
     const BannerData = {
         discount: "30% OFF",
         title: "Fine Smile",
@@ -47,7 +47,7 @@ export default function Welcome({ categories, bestproducts }) {
     return (
         <>
             <Head title="Home" />
-            <Navbar categories={categories} />
+            <Navbar categories={categories} auth={auth} />
             <Slide bestproducts={bestproducts} />
             <Banner data={BannerData} />
             <Services />

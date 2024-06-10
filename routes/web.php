@@ -3,7 +3,10 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -22,8 +25,18 @@ Route::resource('product', ProductController::class);
 Route::get('/products/{category_id}', [ProductController::class, 'getProductByCategory'])->name('productsByCategory');
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    $categories = Category::all();
+    $bestproducts = Product::with('images')->orderBy("price_bt")->get();
+    $user = Auth::user();
+
+    return Inertia::render('Welcome', [
+        "categories" => $categories,
+        "bestproducts" => $bestproducts,
+        "auth" => [
+            "user" => $user
+        ]
+    ]);
+})->middleware(['auth', 'verified'])->name('Home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

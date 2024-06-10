@@ -4,8 +4,20 @@ import { FaCartShopping } from "react-icons/fa6";
 
 import DarkMode from "./DarkMode";
 
-export default function Navbar({ categories }) {
-    console.log(categories);
+export default function Navbar({ categories, auth = { user: null } }) {
+    const handleLogout = (e) => {
+        e.preventDefault();
+
+        axios
+            .post("/logout")
+            .then(() => {
+                // Redirect to home page after successful logout
+                Inertia.visit(route("welcome"));
+            })
+            .catch((error) => {
+                console.error("Logout failed:", error);
+            });
+    };
     return (
         <div className="bg-white dark:bg-gray-900 drak:text-white duration-200 relative z-40">
             <div className="py-4">
@@ -35,12 +47,28 @@ export default function Navbar({ categories }) {
                                     </li>
                                 ))}
                                 <li>
-                                    <a
-                                        className="dark:text-white bg-primary ml-10 cursor-pointer hover:scale-105 duration-300 py-2 px-8 rounded-full relative z-10"
-                                        href="/admin"
-                                    >
-                                        Login
-                                    </a>
+                                    {auth.user ? (
+                                        <form
+                                            onSubmit={handleLogout}
+                                            action={route("logout")}
+                                            method="POST"
+                                        >
+                                            <button
+                                                type="submit"
+                                                className="dark:text-white bg-primary ml-10 cursor-pointer hover:scale-105 duration-300 py-2 px-8 rounded-full relative z-10"
+                                                href={route("logout")}
+                                            >
+                                                Logout
+                                            </button>
+                                        </form>
+                                    ) : (
+                                        <a
+                                            className="dark:text-white bg-primary ml-10 cursor-pointer hover:scale-105 duration-300 py-2 px-8 rounded-full relative z-10"
+                                            href="/admin"
+                                        >
+                                            Login
+                                        </a>
+                                    )}
                                 </li>
                             </ul>
                         </div>
