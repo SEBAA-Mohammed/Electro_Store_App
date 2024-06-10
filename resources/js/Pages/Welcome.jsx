@@ -48,7 +48,7 @@ export default function Welcome({ categories, bestproducts, auth }) {
         <>
             <Head title="Home" />
             <Navbar categories={categories} auth={auth} />
-            <Slide bestproducts={bestproducts} />
+            <Slide categories={categories} />
             <Banner data={BannerData} />
             <Services />
             <Banner data={BannerData2} />

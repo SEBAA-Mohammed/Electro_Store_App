@@ -68,7 +68,7 @@ class ProductController extends Controller
     public function getProductByCategory($id)
     {
         $categories = Category::all();
-        $products = Product::with('images')->where('category_id', $id)->get();
+        $products = Product::with('images', 'category')->where('category_id', $id)->get();
 
         return Inertia::render('Products', [
             "products" => $products,
