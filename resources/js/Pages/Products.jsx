@@ -3,6 +3,7 @@ import Footer from "@/Components/Footer";
 import Partners from "@/Components/Partners";
 import Button from "@/Components/Button";
 import { Head } from "@inertiajs/react";
+import Heading from "@/Components/Heading";
 
 export default function Products({ products, categories }) {
     const baseUrl = "http://127.0.0.1:8000/storage/";
@@ -11,7 +12,7 @@ export default function Products({ products, categories }) {
         <>
             <Head title={product.category.label}></Head>
             <Navbar categories={categories} />
-            <div className="container mt-4">
+            <div className="container mt-4 mb-40">
                 <div className="overflow-hidden rounded-3xl min-h-[450px] sm:min-h-[550px] hero-bg-color flex justify-center items-center ">
                     <div className=" container pb-8 sm:pb-0">
                         <div className="grid grid-cols-1 sm:grid-cols-2">
@@ -49,7 +50,12 @@ export default function Products({ products, categories }) {
                 </div>
             </div>
 
-            <div className="mb-10 mt-16">
+            <Heading
+                title={"Checkout our best deals"}
+                subtitle={product.category.label}
+            ></Heading>
+
+            <div className="mb-10 mt-40">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 place-items-center">
                     {/* card section */}
                     {products.map((product) => (
