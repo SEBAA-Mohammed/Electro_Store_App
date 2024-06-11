@@ -2,12 +2,14 @@ import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
 import Partners from "@/Components/Partners";
 import Button from "@/Components/Button";
+import { Head } from "@inertiajs/react";
 
 export default function Products({ products, categories }) {
     const baseUrl = "http://127.0.0.1:8000/storage/";
     const product = products[0];
     return (
         <>
+            <Head title={product.category.label}></Head>
             <Navbar categories={categories} />
             <div className="container mt-4">
                 <div className="overflow-hidden rounded-3xl min-h-[450px] sm:min-h-[550px] hero-bg-color flex justify-center items-center ">

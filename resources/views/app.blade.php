@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{-- <link rel="shortcut icon" type="x-icon" href="{{ asset('applogo.svg') }}"> --}}
+    <link rel="shortcut icon" type="x-icon" href="{{ asset('applogo.svg') }}" />
     {{-- <link rel="icon" type="svg+xml" sizes="32x32" href="/applogo.svg" /> --}}
 
     <title inertia>{{ config('app.name', 'Electro-Store') }}</title>
