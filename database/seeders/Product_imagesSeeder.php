@@ -37,43 +37,43 @@ class Product_imagesSeeder extends Seeder
             ],
             [
                 'image_url' => 'products/01J01QEEY17ZNJWMABX4FGR7GF.jpg',
-                'product_id' => 8,
+                'product_id' => 3,
             ],
             [
                 'image_url' => 'products/01J01R0D2ZVZ698R7EK9R4ZAXQ.jpg',
-                'product_id' => 9,
+                'product_id' => 4,
             ],
             [
                 'image_url' => 'products/01J01R1GZA74CE4EYC3BTYS2NG.jpg',
-                'product_id' => 10,
+                'product_id' => 5,
             ],
             [
                 'image_url' => 'products/01J01R2G50GZE0J2J44FNYQX2W.jpg',
-                'product_id' => 11,
+                'product_id' => 6,
             ],
             [
                 'image_url' => 'products/01J01R3AR89NC8MGTNAPR79RSJ.jpg',
-                'product_id' => 12,
+                'product_id' => 7,
             ],
             [
                 'image_url' => 'products/01J04N8FHQP6KY5GDVQ2FF7YTS.png',
-                'product_id' => 13,
+                'product_id' => 8,
             ],
             [
                 'image_url' => 'products/01J04N9S6ZGHSMAN9SQRYT5CW6.png',
-                'product_id' => 14,
+                'product_id' => 9,
             ],
             [
                 'image_url' => 'products/01J04NBY11KATWF79KPFNVGC3Q.png',
-                'product_id' => 15,
+                'product_id' => 10,
             ],
             [
                 'image_url' => 'products/01J04NEZE7KH4E2AWV7400Z1V1.jpg',
-                'product_id' => 16,
+                'product_id' => 11,
             ],
             [
                 'image_url' => 'products/01J04NFXEA5YSMXFJQTCKC7W86.jpg',
-                'product_id' => 17,
+                'product_id' => 12,
             ],
         ]);
     }

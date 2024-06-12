@@ -32,7 +32,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 2,
             ],
             [
-                'id' => 8,
                 'label' => 'casque 1',
                 'description' => 'the best headphone ever',
                 'price_bt' => 150,
@@ -65,7 +64,6 @@ class ProductSeeder extends Seeder
                 'category_id' => 1,
             ],
             [
-                'id' => 12,
                 'label' => 'casque 5',
                 'description' => 'the best headphone ever',
                 'price_bt' => 160,
