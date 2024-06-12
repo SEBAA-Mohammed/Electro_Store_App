@@ -77,13 +77,13 @@ export default function Checkout({ categories, auth }) {
                                     </p>
                                 </div>
                             </div>
-                            <div class="flex items-center flex-col min-[550px]:flex-row w-full max-xl:max-w-xl max-xl:mx-auto gap-2">
-                                <h6 class="font-manrope font-bold text-2xl leading-9 text-black w-full max-w-[176px] text-center dark:text-white">
+                            <div className="flex items-center flex-col min-[550px]:flex-row w-full max-xl:max-w-xl max-xl:mx-auto gap-2">
+                                <h6 className="font-manrope font-bold text-2xl leading-9 text-black w-full max-w-[176px] text-center dark:text-white">
                                     20%{" "}
-                                    <span class="text-sm text-gray-300 ml-3 lg:hidden whitespace-nowrap"></span>
+                                    <span className="text-sm text-gray-300 ml-3 lg:hidden whitespace-nowrap"></span>
                                 </h6>
-                                <div class="flex items-center w-full mx-auto justify-center"></div>
-                                <h6 class="text-primary font-manrope font-bold text-2xl leading-9 w-full max-w-[176px] text-center">
+                                <div className="flex items-center w-full mx-auto justify-center"></div>
+                                <h6 className="text-primary font-manrope font-bold text-2xl leading-9 w-full max-w-[176px] text-center">
                                     ${item.price_bt}
                                 </h6>
                             </div>
@@ -118,7 +118,10 @@ export default function Checkout({ categories, auth }) {
                 </div>
             </div>
             <div className="flex items-center flex-col sm:flex-row justify-center gap-3 mt-8">
-                <button className="rounded-full w-full max-w-[280px] py-4 text-center justify-center items-center bg-primary font-semibold text-lg text-white flex transition-all duration-500 hover:bg-gray-800">
+                <Link
+                    href={route("CheckoutStore")}
+                    className="rounded-full w-full max-w-[280px] py-4 text-center justify-center items-center bg-primary font-semibold text-lg text-white flex transition-all duration-500 hover:bg-gray-800"
+                >
                     Continue to Payment
                     <svg
                         className="ml-2"
@@ -136,7 +139,7 @@ export default function Checkout({ categories, auth }) {
                             strokeLinejoin="round"
                         />
                     </svg>
-                </button>
+                </Link>
             </div>
             <Partners />
             <Footer />

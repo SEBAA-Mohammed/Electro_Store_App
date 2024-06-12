@@ -25,6 +25,7 @@ Route::get("/", [HomeController::class, 'index']);
 Route::resource('product', ProductController::class);
 Route::get('/products/{category_id}', [ProductController::class, 'getProductByCategory'])->name('productsByCategory');
 Route::get('/checkout', [checkoutController::class, 'index'])->name('Checkout');
+Route::get('/checkoutStore', [checkoutController::class, 'store'])->name('CheckoutStore');
 
 Route::get('/dashboard', function () {
     $categories = Category::all();
