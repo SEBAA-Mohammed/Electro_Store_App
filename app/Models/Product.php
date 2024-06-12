@@ -34,4 +34,8 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    protected function getPriceTTCAttribute(): int
+    {
+        return round($this->prix_bt * (1 + $this->tva), 2) * 100;
+    }
 }
