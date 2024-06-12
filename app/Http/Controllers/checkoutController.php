@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
-class HomeController extends Controller
+class checkoutController extends Controller
 {
     public function index()
     {
         $categories = Category::all();
         $user = Auth::user();
 
-        return Inertia::render('Welcome', [
+        return Inertia::render('Checkout', [
             "categories" => $categories,
             "auth" => [
                 "user" => $user

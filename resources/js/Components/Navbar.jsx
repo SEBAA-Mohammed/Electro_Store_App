@@ -1,11 +1,15 @@
-import { Link, Head } from "@inertiajs/react";
+import { Link } from "@inertiajs/react";
 import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 
 import DarkMode from "./DarkMode";
 import { useCart } from "@/Contexts/cart-context";
 
-export default function Navbar({ categories, auth = { user: null } }) {
+export default function Navbar({
+    categories,
+    auth = { user: null },
+    handleOrderPopup,
+}) {
     const { items } = useCart();
     const handleLogout = (e) => {
         e.preventDefault();
@@ -87,7 +91,11 @@ export default function Navbar({ categories, auth = { user: null } }) {
                             <IoMdSearch className="text-xl text-gray-600 group-hover:text-primary  dark:text-gray-400 absolute top-1/2 -translate-y-1/2 right-3 duration-200" />
                         </div>
                         {/* cart btn section  */}
-                        <Link className="relative p-3 ">
+                        <Link
+                            href={route("Checkout")}
+                            className="relative p-3 "
+                            onClick={handleOrderPopup}
+                        >
                             <FaCartShopping className="text-xl text-gray-600 dark:text-gray-400" />
                             <div className="w-4 h-4 bg-red-500 text-white rounded-full absolute top-0 right-0 flex items-center justify-center text-xs ">
                                 {items.length}

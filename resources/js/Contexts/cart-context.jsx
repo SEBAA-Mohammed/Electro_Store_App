@@ -19,20 +19,14 @@ export function CartProvider({ children }) {
         const existingItem = items.find((item) => item.id === data.id);
 
         if (existingItem) {
-            alert("Info: Item already in cart.");
-
             return;
         }
 
         setItems([...items, data]);
-
-        alert("Success: Item added to cart.");
     };
 
     const removeItem = (id) => {
         setItems(items.filter((item) => item.id !== id));
-
-        alert("Success: Item removed from cart.");
     };
 
     const removeAll = () => {

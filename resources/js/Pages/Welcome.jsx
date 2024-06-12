@@ -9,9 +9,9 @@ import Footer from "@/Components/Footer";
 import { Link, Head } from "@inertiajs/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-export default function Welcome({ categories, bestproducts, auth }) {
+export default function Welcome({ categories, auth }) {
     const BannerData = {
         discount: "30% OFF",
         title: "Fine Smile",
@@ -34,6 +34,12 @@ export default function Welcome({ categories, bestproducts, auth }) {
         bgColor: "#2dcc6f",
     };
 
+    const [orderPopup, setOrderPopup] = useState(false);
+
+    const handleOrderPopup = () => {
+        setOrderPopup(!orderPopup);
+    };
+
     useEffect(() => {
         AOS.init({
             duration: 800,
@@ -47,7 +53,11 @@ export default function Welcome({ categories, bestproducts, auth }) {
     return (
         <>
             <Head title="Home" />
-            <Navbar categories={categories} auth={auth} />
+            <Navbar
+                categories={categories}
+                auth={auth}
+                handleOrderPopup={handleOrderPopup}
+            />
             <Slide categories={categories} />
             <Banner data={BannerData} />
             <Services />
