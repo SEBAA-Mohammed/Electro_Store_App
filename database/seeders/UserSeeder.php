@@ -16,7 +16,6 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'id' => 5,
                 'name' => 'Admin 1',
                 'ardesse' => NULL,
                 'tel' => '+212 762 416 046',
@@ -25,11 +24,8 @@ class UserSeeder extends Seeder
                 'password' => '$2y$12$cA80BZlqASzhFz00tpg4g.Aesyu7j/FpqfJbhyRJ8V5gY.9.cv3ii', // You might want to use Hash::make() for new passwords
                 'is_admin' => 1,
                 'remember_token' => NULL,
-                'created_at' => Carbon::parse('2024-06-09 10:00:54'),
-                'updated_at' => Carbon::parse('2024-06-09 10:00:54'),
             ],
             [
-                'id' => 6,
                 'name' => 'Client 1',
                 'ardesse' => NULL,
                 'tel' => '+212 762 416 046',
@@ -38,8 +34,6 @@ class UserSeeder extends Seeder
                 'password' => '$2y$12$VSOwGHTDhFPqehSYSLneHOzKUGykicfjD9v8d1js1tAqyMZ5mSoM6', // You might want to use Hash::make() for new passwords
                 'is_admin' => 0,
                 'remember_token' => NULL,
-                'created_at' => Carbon::parse('2024-06-09 10:00:54'),
-                'updated_at' => Carbon::parse('2024-06-09 10:00:54'),
             ],
         ]);
     }
