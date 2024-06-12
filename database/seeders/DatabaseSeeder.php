@@ -14,22 +14,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::create([
-            'name' => 'Admin 1',
-            'tel' => '+212 762 416 046',
-            'email' => 'admin2@gmail.com',
-            'password' => Hash::make('admin1234'),
-            'is_admin' => true
-        ]);
-
-        User::create([
-            'name' => 'Client 1',
-            'tel' => '+212 762 416 046',
-            'email' => 'client@gmail.com',
-            'password' => Hash::make('admin1234'),
-            'is_admin' => false
+        $this->call([
+            UserSeeder::class,
+            CategorySeeder::class,
+            ProductSeeder::class,
+            Product_imagesSeeder::class,
+            OrderSeeder::class,
+            OrderDetailsSeeder::class,
         ]);
     }
 }
